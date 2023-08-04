@@ -102,9 +102,9 @@ let dotActive = document.querySelector(".dot_selected");
 let activeDotNum = 0;
 
 
-
 // 
 
+/*
 const dot1 = document.getElementById("dot-1")
 dot1.addEventListener("click", () => {
 	console.log("je click sur le dot-1");
@@ -124,12 +124,19 @@ const dot4 = document.getElementById("dot-4");
 dot4.addEventListener("click", () => {
 	console.log("je click sur le dot-4");
 });
+*/
 
 
+
+
+// Pour chaque dot du tableau dots, j'envoi un écouteur d'évènement, où un count = 0, 1, 2, 3 dot, puis la fonction slideShow(count) + la fonction dotSlidingIndicatorClassList
 
 dots.forEach((dot, i) => {
 	dot.addEventListener("click", () => {
 		count = i;
+
+		console.log(i);
+
 		slideShow(count);
 		dotSlidingIndicatorClassList();
 	});
@@ -147,6 +154,8 @@ function dotSlidingIndicatorClassList() {
 	console.log(dots[count]);	
 
 }
+
+// slide automatique toutes les 5s => images suivantes à partir de l'image [0]
 
 setInterval("slideSuivante(0)", 5000);
 
